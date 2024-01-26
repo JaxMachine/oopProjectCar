@@ -1,6 +1,7 @@
 // Vehicle Class
 
 class Vehicle{
+    // Base Class constructor
     constructor(make, model, year){
         this.make = make;
         this.model = model;
@@ -21,6 +22,8 @@ class Vehicle{
 class Car extends Vehicle{
     constructor(make, model, year){
     super(make, model, year);
+
+    //Car particulars
     this.numWheels = 4;
     }
 }
@@ -42,11 +45,14 @@ class Motorcycle extends Vehicle{
 // Garage Class
 
 class Garage {
+    
+    //Garage Constructor
     constructor(capacity){
         this.vehicles = [];
         this.capacity = capacity;
     }
     add(newVehicle){
+        //Input Sanitation
         if(!(newVehicle instanceof Vehicle)){
             return "Only vehicles are allowed in here!";
         }
